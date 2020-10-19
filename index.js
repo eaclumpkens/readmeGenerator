@@ -11,6 +11,8 @@ function generateReadme(response) {
 
 ${response.description}
 
+![License](https://img.shields.io/badge/license-${response.license}-orange)
+
 ### Contributors
 
 ${response.contributors}
@@ -45,10 +47,10 @@ inquirer.prompt([
         message: "License:",
         name: "license",
         choices: [
-            "GNU",
+            "Apache",
             "MIT",
             "ISC",
-            "Apache"
+            "Other"
         ]
     },
     {

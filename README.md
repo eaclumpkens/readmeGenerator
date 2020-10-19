@@ -1,16 +1,18 @@
 
     
-# Read Me Generator
+# rg
 
-create readme.md document via the command line using node
+
+
+![License](https://img.shields.io/badge/license-Apache-orange)
 
 ### Contributors
 
-eaclumpkens
+elisabeth, adriana, clumpkens
 
 ----
 
 ### Contact Me
 
-GitHub: eaclumpkens
-eaclumpkens@gmail.com
+GitHub: 
+
