@@ -3,7 +3,6 @@ const fs = require("fs");
 const util = require("util");
 
 const writeFileAsync = util.promisify(fs.writeFile);
-const appendFileAsync = util.promisify(fs.appendFile);
 
 function generateReadme(response) {
     return `
@@ -70,7 +69,7 @@ inquirer.prompt([
 ]).then(function(data) {
     console.log("Success.");
 
-    appendFileAsync('README.md', generateReadme(data))
+    writeFileAsync('README.md', generateReadme(data))
 
 }).catch(function(err) {
     console.log(err);
