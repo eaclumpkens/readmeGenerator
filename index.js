@@ -8,14 +8,18 @@ const writeFileAsync = util.promisify(fs.writeFile);
 
 function generateImages(array){
 
-    oldArray = array.split(",");
+    if (array) {
+        oldArray = array.split(",");
     
-    
-    for (i=0; i< oldArray.length; i++) {
-        oldArray[i] = `![image](../assets/images/${oldArray[i].trim()}) \n`;  
-    }
+        for (i=0; i< oldArray.length; i++) {
+            oldArray[i] = `![image](./assets/images/${oldArray[i].trim()}) \n`;  
+        }
+        return oldArray.join("");
 
-    return oldArray.join("");
+    } else {
+        return array;
+    }
+    
 }
 
 function generateList(input) {
