@@ -11,14 +11,25 @@ SO THAT can quickly create a professional README for a new project
 
 ## Table of Contents
 
+[Demo](#demo)
+
 [Installation](#installation)
+
 [Usage](#usage)
+
 [Contribution](#contribution)
+
 [Tests](#tests)
+
 [Images](#images)
+
 [Questions](#questions)
 
 ----
+
+### Demo 
+<a name="demo"></a>
+[Click to view video demo](https://www.youtube.com/watch?v=hSYXsQq7fxE)
 
 <a name="installation"></a>
 ### Installation
@@ -77,5 +88,6 @@ This project currently does not utilize testing features.
 Feel free to contact me via GitHub or email with any feedback - thanks for checking out my code!
 
 [GitHub u/eaclumpkens](https://github.com/eaclumpkens)
+
 eaclumpkens@gmail.com
 
