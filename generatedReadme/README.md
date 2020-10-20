@@ -1,6 +1,6 @@
 
 # 
-![License](https://img.shields.io/badge/license-Apache-orange)
+[![License](https://img.shields.io/badge/license-Apache-orange)](https://opensource.org/licenses)
 
 
 
@@ -43,9 +43,7 @@
 <a name="images"></a>
 ### Images
 
-![image](../assets/images/fish-01.jpg) 
-![image](../assets/images/fish-02.jpg) 
-![image](../assets/images/fish-03.jpg) 
+![image](../assets/images/) 
 
 
 ----

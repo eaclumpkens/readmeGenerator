@@ -1,6 +1,6 @@
 
 # Read Me
-![License](https://img.shields.io/badge/license-Apache-orange)
+![License](https://img.shields.io/badge/license-Other-orange)
 
 description
 

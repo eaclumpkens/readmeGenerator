@@ -26,7 +26,7 @@ function generateList(input) {
 function generateReadme(response) {
     return `
 # ${response.title}
-![License](https://img.shields.io/badge/license-${response.license}-orange)
+[![License](https://img.shields.io/badge/license-${response.license}-orange)](https://opensource.org/licenses)
 
 ${generateList(response.description)}
 
