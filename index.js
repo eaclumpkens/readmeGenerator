@@ -4,43 +4,84 @@ const util = require("util");
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
+// FUNCTIONS
+
+function generateList(input) {
+
+    let newArray = input.split("-").join("\n * ");
+
+    return newArray;
+}
+
 function generateReadme(response) {
     return `
-    
-# ${response.projectTitle}
+# ${response.title}
 
-${response.description}
+${generateList(response.description)}
 
+## Table of Contents
+
+[Installation](#installation)
+[Usage](#usage)
+[Contribution](#contribution)
+[Tests](#tests)
+[Questions](#questions)
+
+
+<a name="installation"></a>
+### Installation
+
+${generateList(response.installation)}
+
+<a name="usage"></a>
+### Usage
 ![License](https://img.shields.io/badge/license-${response.license}-orange)
 
-### Contributors
+${generateList(response.usage)}
 
-${response.contributors}
+<a name="contribution"></a>
+### Contribution
+
+${generateList(response.contribute)}
+
+<a name="tests"></a>
+### Tests
+
+${generateList(response.testInfo)}
 
 ----
 
-### Contact Me
+<a name="questions"></a>
+### Questions
+#### Contact Me
 
 GitHub: ${response.github}
 ${response.email}
 `
     }
 
+
+// INQUIRER PROMPTS
 inquirer.prompt([
     {
         type: "input",
         message: "Project Title:",
-        name: "projectTitle"
+        name: "title"
     },
     {
         type: "input",
-        message: "Project Description:",
+        message: "Project Description (use - to create bullets at any time):",
         name: "description"
     },
     {
         type: "input",
-        message: "Installations:",
-        name: "installations"
+        message: "Installation Steps:",
+        name: "installation"
+    },
+    {
+        type: "input",
+        message: "Usage Information:",
+        name: "usage"
     },
     {
         type: "list",
@@ -55,8 +96,13 @@ inquirer.prompt([
     },
     {
         type: "input",
-        message: "Contributors:",
-        name: "contributors",
+        message: "Contribution Guidelines:",
+        name: "contribute",
+    },
+    {
+        type: "input",
+        message: "Test Instructions:",
+        name: "testInfo",
     },
     {
         type: "input",
@@ -70,7 +116,6 @@ inquirer.prompt([
     }
 ]).then(function(data) {
     console.log("Success.");
-
     writeFileAsync('README.md', generateReadme(data))
 
 }).catch(function(err) {
