@@ -12,7 +12,7 @@ function generateImages(array){
     
     
     for (i=0; i< oldArray.length; i++) {
-        oldArray[i] = `![image](./assets/images/${oldArray[i].trim()}) \n`;  
+        oldArray[i] = `![image](../assets/images/${oldArray[i].trim()}) \n`;  
     }
 
     return oldArray.join("");
@@ -72,8 +72,7 @@ ${generateImages(response.images)}
 ### Questions
 #### Contact Me
 
-Feel free to contact me via GitHub or email with any feedback - thanks for 
-checking out my code!
+Feel free to contact me via GitHub or email with any feedback - thanks for checking out my code!
 
 [GitHub u/${response.github}](https://github.com/${response.github})
 ${response.email}
@@ -139,8 +138,8 @@ inquirer.prompt([
         name: "email",
     }
 ]).then(function(data) {
-    console.log("Success!");
-    writeFileAsync('README.md', generateReadme(data))
+    console.log("Success - ReadMe File Generated");
+    writeFileAsync('./generatedReadme/README.md', generateReadme(data))
 
 }).catch(function(err) {
     console.log(err);
