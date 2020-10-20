@@ -6,27 +6,40 @@ const writeFileAsync = util.promisify(fs.writeFile);
 
 // FUNCTIONS
 
+function generateImages(array){
+
+    oldArray = array.split(",");
+    
+    
+    for (i=0; i< oldArray.length; i++) {
+        oldArray[i] = `![image](./assets/images/${oldArray[i].trim()}) \n`;  
+    }
+
+    return oldArray.join("");
+}
+
 function generateList(input) {
-
     let newArray = input.split("-").join("\n * ");
-
     return newArray;
 }
 
 function generateReadme(response) {
     return `
 # ${response.title}
+![License](https://img.shields.io/badge/license-${response.license}-orange)
 
 ${generateList(response.description)}
 
 ## Table of Contents
 
-[Installation](#installation)
-[Usage](#usage)
-[Contribution](#contribution)
-[Tests](#tests)
+[Installation](#installation)\n
+[Usage](#usage)\n
+[Contribution](#contribution)\n
+[Tests](#tests)\n
+[Images](#images)\n
 [Questions](#questions)
 
+----
 
 <a name="installation"></a>
 ### Installation
@@ -35,7 +48,6 @@ ${generateList(response.installation)}
 
 <a name="usage"></a>
 ### Usage
-![License](https://img.shields.io/badge/license-${response.license}-orange)
 
 ${generateList(response.usage)}
 
@@ -49,17 +61,24 @@ ${generateList(response.contribute)}
 
 ${generateList(response.testInfo)}
 
+<a name="images"></a>
+### Images
+
+${generateImages(response.images)}
+
 ----
 
 <a name="questions"></a>
 ### Questions
 #### Contact Me
 
-GitHub: ${response.github}
+Feel free to contact me via GitHub or email with any feedback - thanks for 
+checking out my code!
+
+[GitHub u/${response.github}](https://github.com/${response.github})
 ${response.email}
 `
     }
-
 
 // INQUIRER PROMPTS
 inquirer.prompt([
@@ -106,6 +125,11 @@ inquirer.prompt([
     },
     {
         type: "input",
+        message: "Image File Names (Rel Path Only [./assets/images] Use , to seperate files w/ extenssion):",
+        name: "images",
+    },
+    {
+        type: "input",
         message: "GitHub Username:",
         name: "github",
     },
@@ -115,7 +139,7 @@ inquirer.prompt([
         name: "email",
     }
 ]).then(function(data) {
-    console.log("Success.");
+    console.log("Success!");
     writeFileAsync('README.md', generateReadme(data))
 
 }).catch(function(err) {
