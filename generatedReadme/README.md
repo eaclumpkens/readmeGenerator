@@ -1,8 +1,8 @@
 
-# project title
-[![License](https://img.shields.io/badge/license-Apache-orange)](https://opensource.org/licenses)
+# Example Project
+[![License](https://img.shields.io/badge/license-MIT-orange)](https://opensource.org/licenses)
 
-description
+Brief overview of your project.
 
 ## Table of Contents
 
@@ -23,7 +23,8 @@ description
 <a name="installation"></a>
 ### Installation
 
-installations 
+What are the steps required to install your project? Provide a step by step description of how to get the development environment running.
+
  * step one 
  * step two 
  * step three
@@ -31,20 +32,19 @@ installations
 <a name="usage"></a>
 ### Usage
 
-usage
+Provide instructions and examples for use. Include screenshots as needed. 
 
 <a name="contribution"></a>
 ### Contribution
 
-contribute
+List your collaborators, if any, with links to their GitHub profiles.
 
 <a name="tests"></a>
 ### Tests
 
-tests 
- * one 
- * two 
- * three
+Go the extra mile and write tests for your application. Then provide examples on how to run them. 
+ * example one 
+ * example two
 
 <a name="images"></a>
 ### Images
